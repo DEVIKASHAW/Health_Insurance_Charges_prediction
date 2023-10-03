@@ -34,6 +34,7 @@ def predict_charges(age, sex, bmi, children, smoker, region):
         'region_southeast': [1 if region_encoded == 2 else 0],
         'region_southwest': [1 if region_encoded == 3 else 0]
     })
+
     
     # Make prediction
     prediction = model.predict(input_data)[0]
