@@ -5,7 +5,7 @@ import sklearn
 from sklearn.ensemble import GradientBoostingClassifier
 
 # Load the pre-trained Gradient Boosting model
-model = joblib.load("model_joblib_gb.pkl")
+model = joblib.load("model_joblib_gb1.pkl")
 
 # Function to predict insurance charges
 def predict_charges(age, sex, bmi, children, smoker, region):
