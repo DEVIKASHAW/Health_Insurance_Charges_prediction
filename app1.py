@@ -24,10 +24,10 @@ def predict_charges(age, sex, bmi, children, smoker, region_northeast, region_no
         'bmi': [bmi],
         'children': [children],
         'smoker': [smoker_encoded],
-        'region_northeast': [region_northeast],
-        'region_northwest': [region_northwest],
-        'region_southeast': [region_southeast],
-        'region_southwest': [region_southwest]
+        'region_northeast': [1 if region_northeast else 0],
+        'region_northwest': [1 if region_northwest else 0],
+        'region_southeast': [1 if region_southeast else 0],
+        'region_southwest': [1 if region_southwest else 0]
     })
     
     # Make prediction
