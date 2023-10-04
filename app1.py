@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 
 # Load the pre-trained Gradient Boosting model
-model = joblib.load("df.pkl")
+model = joblib.load("rf_final.pkl")
 
 # Function to predict insurance charges
 def predict_charges(age, sex, bmi, children, smoker, region):
