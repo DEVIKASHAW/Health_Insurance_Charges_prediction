@@ -35,25 +35,22 @@ def predict_charges(age, sex, bmi, children, smoker, region):
         'region_southwest': [1 if region_encoded == 3 else 0]
     })
 
-    
     # Make prediction
     prediction = model.predict(input_data)[0]
     return prediction
 
 # Streamlit UI elements
 st.title("Insurance Charges Prediction")
-st.sidebar.header("User Input")
 
-# User input fields
-age = st.sidebar.slider("Age", 18, 100, 30)
-sex = st.sidebar.radio("Sex", ["Male", "Female"])
-bmi = st.sidebar.slider("BMI", 15.0, 50.0, 25.0)
-children = st.sidebar.slider("Number of Children", 0, 5, 1)
-smoker = st.sidebar.radio("Smoker", ["Yes", "No"])
-region = st.sidebar.radio("Region", ["Northeast", "Northwest", "Southeast", "Southwest"])
+# User input fields on the main page
+age = st.slider("Age", 18, 100, 30)
+sex = st.radio("Sex", ["Male", "Female"])
+bmi = st.slider("BMI", 15.0, 50.0, 25.0)
+children = st.slider("Number of Children", 0, 5, 1)
+smoker = st.radio("Smoker", ["Yes", "No"])
+region = st.radio("Region", ["Northeast", "Northwest", "Southeast", "Southwest"])
 
 # Make prediction when the "Predict" button is clicked
-if st.sidebar.button("Predict"):
+if st.button("Predict"):
     prediction = predict_charges(age, sex, bmi, children, smoker, region)
     st.subheader(f"Predicted Insurance Charges: ${prediction:.2f}")
-
